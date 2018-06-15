@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 
-	yaml "github.com/sniperkit/codecs/plugin/format/yaml"
+	yaml "github.com/sniperkit/codecs/plugin/codec/yaml"
 )
 
 var yamlCodec yaml.SimpleYamlCodec

@@ -7,22 +7,22 @@ import (
 	// external
 	pp "github.com/sniperkit/pp"
 
-	// internal
-	codecs "github.com/sniperkit/codecs/pkg"
+	// internal - plugin - service (with default list of codecs: json, jsonp, csv, yaml, xml and msgpack)
+	codecs_svc "github.com/sniperkit/codecs/plugin/service"
 )
 
 func main() {
 	fmt.Println("codecs - advanced example")
 
-	// make a codec service
-	codecService := new(codecs.WebCodecService)
+	// instanciate a new codec service
+	codecService := codecs_svc.NewWebCodecService()
 
 	// get the content type (probably from the request)
 	var contentType string = "application/json"
 
 	// get the codec
 	codec, codecErr := codecService.GetCodec(contentType)
-	if err != nil {
+	if codecErr != nil {
 		log.Fatalln("codecErr: ", codecErr)
 		// handle errors - specifially ErrorContentTypeNotSupported
 	}
@@ -36,7 +36,7 @@ func main() {
 
 	// use the codec to unmarshal the dataBytes
 	var obj interface{}
-	unmarshalErr := codecService.UnmarshalWithCodec(codec, dataBytes, obj)
+	unmarshalErr := codecService.UnmarshalWithCodec(codec, dataBytes, &obj)
 	if unmarshalErr != nil {
 		// handle this error
 		log.Fatalln("unmarshalErr: ", unmarshalErr)
@@ -66,13 +66,13 @@ func main() {
 	dataObject := map[string]interface{}{"name": "Mat"}
 
 	// use the codec service to marshal to bytes
-	bytes, marshalErr := codecService.MarshalWithCodec(responseCodecErr, dataObject, nil)
+	bytes, marshalErr := codecService.MarshalWithCodec(responseCodec, dataObject, nil)
 	if marshalErr != nil {
 		log.Fatalln("marshalErr: ", marshalErr)
 		// handle marshalErr
 	}
 
 	// bytes would now be a representation of the data object
-	pp.Println("bytes=", bytes)
+	pp.Println("bytes.String()=", string(bytes))
 
 }

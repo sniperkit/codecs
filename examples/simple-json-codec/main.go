@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 
-	json "github.com/sniperkit/codecs/plugin/format/json"
+	json "github.com/sniperkit/codecs/plugin/codec/json"
 )
 
 var jsonCodec json.SimpleXmlCodec

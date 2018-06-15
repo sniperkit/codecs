@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 
-	xml "github.com/sniperkit/codecs/plugin/format/xml"
+	xml "github.com/sniperkit/codecs/plugin/codec/xml"
 )
 
 var xmlCodec xml.SimpleXmlCodec

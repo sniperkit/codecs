@@ -5,6 +5,8 @@ package constants
 */
 
 const (
+	ContentTypeYAML      string = "application/yaml"
+	FileExtensionYAML    string = ".yaml"
 	ContentTypeJSON      string = "application/json"
 	FileExtensionJSON    string = ".json"
 	ContentTypeJSONP     string = "text/javascript"

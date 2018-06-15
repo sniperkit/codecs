@@ -8,32 +8,32 @@ example-build-all: example-build-codec-service example-build-codec-yaml example-
 example-run-all: example-run-codec-service example-run-codec-yaml example-run-codec-xml example-run-codec-json
 
 example-build-codec-service:
-	@go build -o ./bin/example-service-codec example/service-codec/main.go
+	@go build -o ./bin/example-service-codec examples/service-codec/main.go
 	@./bin/example-service-codec
 
 example-run-codec-service:
 	@go run -race example/service-codec/main.go
 
 example-build-codec-yaml:
-	# @go build -o ./bin/example-simple-yaml-codec ./example/simple-yaml-codec/main.go
+	# @go build -o ./bin/example-simple-yaml-codec ./examples/simple-yaml-codec/main.go
 	# @./bin/example-simple-yaml-codec
 
 example-run-codec-yaml:
-	# @go run -race example/simple-yaml-codec/main.go
+	# @go run -race ./examples/simple-yaml-codec/main.go
 
 example-build-codec-xml:
-	@go build -o ./bin/example-simple-xml-codec ./example/simple-xml-codec/main.go
+	@go build -o ./bin/example-simple-xml-codec ./examples/simple-xml-codec/main.go
 	@./bin/example-simple-xml-codec
 
 example-run-codec-xml:
-	@go run -race example/simple-xml-codec/main.go
+	@go run -race examples/simple-xml-codec/main.go
 
 example-build-codec-json:
-	@go build -o ./bin/example-simple-json-codec ./example/simple-json-codec/main.go
+	@go build -o ./bin/example-simple-json-codec ./examples/simple-json-codec/main.go
 	@./bin/example-simple-json-codec
 
 example-run-codec-json:
-	@go run -race example/simple-json-codec/main.go
+	@go run -race examples/simple-json-codec/main.go
 
 install:
 	@go install ./pkg/*.go
