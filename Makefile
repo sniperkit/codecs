@@ -15,8 +15,8 @@ example-run-codec-service:
 	@go run -race example/service-codec/main.go
 
 example-build-codec-yaml:
-	# @go build -o ./bin/example-simple-yaml-codec ./examples/simple-yaml-codec/main.go
-	# @./bin/example-simple-yaml-codec
+	@go build -o ./bin/example-simple-yaml-codec ./examples/simple-yaml-codec/main.go
+	@./bin/example-simple-yaml-codec
 
 example-run-codec-yaml:
 	# @go run -race ./examples/simple-yaml-codec/main.go

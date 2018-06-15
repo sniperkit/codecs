@@ -6,7 +6,7 @@ import (
 	yaml "github.com/sniperkit/codecs/plugin/codec/yaml"
 )
 
-var yamlCodec yaml.SimpleYamlCodec
+var yamlCodec yaml.YamlCodec
 
 func main() {
 
