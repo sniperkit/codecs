@@ -7,8 +7,8 @@ import (
 )
 
 const (
-	ContentTypeRSS   string = "application/rss"
-	FileExtensionRSS string = ".rss"
+	ContentType   string = "application/rss"
+	FileExtension string = ".rss"
 )
 
 var validRssContentTypes = []string{
@@ -40,12 +40,12 @@ func (c *RssCodec) Unmarshal(data []byte, obj interface{}) error {
 
 // ContentType returns the content type for this codec.
 func (c *RssCodec) ContentType() string {
-	return ContentTypeRSS
+	return ContentType
 }
 
 // FileExtension returns the file extension for this codec.
 func (c *RssCodec) FileExtension() string {
-	return FileExtensionRSS
+	return FileExtension
 }
 
 // CanMarshalWithCallback returns whether this codec is capable of marshalling a response containing a callback.

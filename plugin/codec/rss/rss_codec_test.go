@@ -51,13 +51,13 @@ func TestUnmarshal(t *testing.T) {
 
 func TestResponseContentType(t *testing.T) {
 
-	assert.Equal(t, codec.ContentType(), ContentTypeRSS)
+	assert.Equal(t, codec.ContentType(), ContentType)
 
 }
 
 func TestFileExtension(t *testing.T) {
 
-	assert.Equal(t, FileExtensionRSS, codec.FileExtension())
+	assert.Equal(t, FileExtension, codec.FileExtension())
 
 }
 
