@@ -1,0 +1,17 @@
+package: github.com/sniperkit/codecs
+import:
+- package: github.com/clbanning/x2j
+- package: github.com/sniperkit/pp
+- package: github.com/stretchr/objx
+- package: github.com/stretchr/stew
+  subpackages:
+  - strings
+- package: github.com/stretchr/testify
+  subpackages:
+  - mock
+- package: github.com/ugorji/go
+  subpackages:
+  - codec
+- package: gopkg.in/mgo.v2
+  subpackages:
+  - bson
