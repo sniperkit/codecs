@@ -6,7 +6,7 @@ import (
 	xml "github.com/sniperkit/codecs/plugin/codec/xml"
 )
 
-var xmlCodec xml.SimpleXmlCodec
+var xmlCodec xml.XmlCodec
 
 func main() {
 

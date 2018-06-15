@@ -6,7 +6,7 @@ import (
 	json "github.com/sniperkit/codecs/plugin/codec/json"
 )
 
-var jsonCodec json.SimpleXmlCodec
+var jsonCodec json.JsonCodec
 
 func main() {
 
