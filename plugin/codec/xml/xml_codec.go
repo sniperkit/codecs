@@ -5,6 +5,7 @@ import (
 	"reflect"
 	"strconv"
 	"strings"
+	"sync"
 
 	// external
 	xml "github.com/clbanning/x2j"
@@ -36,7 +37,16 @@ var validXmlContentTypes = []string{
 }
 
 // XmlCodec converts objects to and from simple XML.
-type XmlCodec struct{}
+type XmlCodec struct {
+	config Config
+	lock   *sync.RWMutex
+}
+
+// New returns a new XML serializer
+func New(cfg ...Config) *XmlCodec {
+	c := DefaultConfig().Merge(cfg)
+	return &XmlCodec{config: c}
+}
 
 // Marshal converts an object to a []byte representation.
 // You can optionally pass additional arguments to further customize this call.

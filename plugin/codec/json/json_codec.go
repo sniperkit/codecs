@@ -1,12 +1,14 @@
 package json
 
 import (
+	"sync"
+
 	jsonEncoding "encoding/json"
 )
 
 const (
-	ContentTypeJSON   string = "application/json"
-	FileExtensionJSON string = ".json"
+	ContentType   string = "application/json"
+	FileExtension string = ".json"
 )
 
 var validJsonContentTypes = []string{
@@ -15,7 +17,16 @@ var validJsonContentTypes = []string{
 }
 
 // JsonCodec converts objects to and from JSON.
-type JsonCodec struct{}
+type JsonCodec struct {
+	config Config
+	lock   *sync.RWMutex
+}
+
+// New returns a new JSON serializer
+func New(cfg ...Config) *JsonCodec {
+	c := DefaultConfig().Merge(cfg)
+	return &JsonCodec{config: c}
+}
 
 // Converts an object to JSON.
 func (c *JsonCodec) Marshal(object interface{}, options map[string]interface{}) ([]byte, error) {
@@ -29,12 +40,12 @@ func (c *JsonCodec) Unmarshal(data []byte, obj interface{}) error {
 
 // ContentType returns the content type for this codec.
 func (c *JsonCodec) ContentType() string {
-	return ContentTypeJSON
+	return ContentType
 }
 
 // FileExtension returns the file extension for this codec.
 func (c *JsonCodec) FileExtension() string {
-	return FileExtensionJSON
+	return FileExtension
 }
 
 // CanMarshalWithCallback returns whether this codec is capable of marshalling a response containing a callback.

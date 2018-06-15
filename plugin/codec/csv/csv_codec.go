@@ -7,14 +7,15 @@ import (
 	"fmt"
 	"reflect"
 	"strings"
+	"sync"
 
 	// external
 	objx "github.com/stretchr/objx"
 )
 
 const (
-	ContentTypeCSV   string = "text/csv"
-	FileExtensionCSV string = ".csv"
+	ContentType   string = "text/csv"
+	FileExtension string = ".csv"
 )
 
 var validCsvContentTypes = []string{
@@ -25,7 +26,16 @@ var validCsvContentTypes = []string{
 }
 
 // CsvCodec converts objects to and from CSV format.
-type CsvCodec struct{}
+type CsvCodec struct {
+	config Config
+	lock   *sync.RWMutex
+}
+
+// New returns a new CSV serializer
+func New(cfg ...Config) *CsvCodec {
+	c := DefaultConfig().Merge(cfg)
+	return &CsvCodec{config: c}
+}
 
 // Converts an object to CSV data.
 func (c *CsvCodec) Marshal(object interface{}, options map[string]interface{}) ([]byte, error) {
@@ -198,12 +208,12 @@ func (c *CsvCodec) Unmarshal(data []byte, obj interface{}) error {
 
 // ContentType returns the content type for this codec.
 func (c *CsvCodec) ContentType() string {
-	return ContentTypeCSV
+	return ContentType
 }
 
 // FileExtension returns the file extension for this codec.
 func (c *CsvCodec) FileExtension() string {
-	return FileExtensionCSV
+	return FileExtension
 }
 
 // CanMarshalWithCallback returns whether this codec is capable of marshalling a response containing a callback.

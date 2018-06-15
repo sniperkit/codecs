@@ -1,1 +1,1 @@
-sitemap.go
+package sitemap

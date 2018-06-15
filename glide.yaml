@@ -2,6 +2,15 @@ package: github.com/sniperkit/codecs
 import:
 - package: github.com/clbanning/x2j
 - package: github.com/go-yaml/yaml
+- package: github.com/imdario/mergo
+- package: github.com/microcosm-cc/bluemonday
+- package: github.com/russross/blackfriday
+- package: github.com/sniperkit/compressible
+  subpackages:
+  - pkg
+- package: github.com/sniperkit/gofeed
+  subpackages:
+  - pkg
 - package: github.com/sniperkit/pp
 - package: github.com/stretchr/objx
 - package: github.com/stretchr/stew

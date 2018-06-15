@@ -1,11 +1,14 @@
 package jsonp
 
 import (
-	jsonEncoding "encoding/json"
 	"errors"
+	"sync"
+
+	jsonEncoding "encoding/json"
 
 	// external
 	stewstrings "github.com/stretchr/stew/strings"
+
 	// internal
 	constants "github.com/sniperkit/codecs/pkg/constants"
 )
@@ -27,7 +30,16 @@ var ErrorMissingCallback = errors.New("A callback is required for JSONP")
 var ErrorUnmarshalNotSupported = errors.New("Unmarshalling an object is not supported for JSONP")
 
 // JsonPCodec converts objects to JSONP.
-type JsonPCodec struct{}
+type JsonPCodec struct {
+	config Config
+	lock   *sync.RWMutex
+}
+
+// New returns a new JSONP serializer
+func New(cfg ...Config) *JsonPCodec {
+	c := DefaultConfig().Merge(cfg)
+	return &JsonPCodec{config: c}
+}
 
 // Marshal converts an object to JSONP.
 func (c *JsonPCodec) Marshal(object interface{}, options map[string]interface{}) ([]byte, error) {

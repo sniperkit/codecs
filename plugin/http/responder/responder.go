@@ -1,6 +1,6 @@
 // Package responder respond differently according to request's accepted mime type
 //
-// Github: http://github.com/sniperkit/codecs/plugin/responder
+// Github: http://github.com/sniperkit/codecs/plugin/http/responder
 package responder
 
 import (

@@ -1,6 +1,8 @@
 package yaml
 
 import (
+	"sync"
+
 	yamlEncoding "github.com/go-yaml/yaml"
 )
 
@@ -15,7 +17,16 @@ var validYamlContentTypes = []string{
 }
 
 // YamlCodec converts objects to and from YAML.
-type YamlCodec struct{}
+type YamlCodec struct {
+	config Config
+	lock   *sync.RWMutex
+}
+
+// New returns a new YAML serializer
+func New(cfg ...Config) *YamlCodec {
+	c := DefaultConfig().Merge(cfg)
+	return &YamlCodec{config: c}
+}
 
 // Converts an object to YAML.
 func (c *YamlCodec) Marshal(object interface{}, options map[string]interface{}) ([]byte, error) {

@@ -1,6 +1,8 @@
-hash: deec240a65962ced822e4e83c055677b0df723335ef76a2d673282cf02f0a619
-updated: 2018-06-15T16:02:14.451825058+02:00
+hash: 44dea64f45d8b8b453f157e645da8b044c817ecc17ebad219b346d6fb467c3b9
+updated: 2018-06-15T18:07:15.335748714+02:00
 imports:
+- name: github.com/andybalholm/cascadia
+  version: 349dd0209470eabd9514242c688c403c0926d266
 - name: github.com/clbanning/x2j
   version: 5e605d46809c441eb0e565867b63f7d80c9140c2
 - name: github.com/davecgh/go-spew
@@ -9,14 +11,42 @@ imports:
   - spew
 - name: github.com/go-yaml/yaml
   version: 5420a8b6744d3b0345ab293f6fcba19c978f1183
+- name: github.com/imdario/mergo
+  version: 7fe0c75c13abdee74b09fcacef5ea1c6bba6a874
 - name: github.com/mattn/go-colorable
   version: efa589957cd060542a26d2dd7832fd6a6c6c3ade
 - name: github.com/mattn/go-isatty
   version: 6ca4dbf54d38eea1a992b3c722a76a5d1c4cb25c
+- name: github.com/microcosm-cc/bluemonday
+  version: 995366fdf961d03629cd17361bddd32745718e2c
 - name: github.com/pmezard/go-difflib
   version: d8ed2627bdf02c080bf22230dbb337003b7aba2d
   subpackages:
   - difflib
+- name: github.com/PuerkitoBio/goquery
+  version: e1271ee34c6a305e38566ecd27ae374944907ee9
+- name: github.com/russross/blackfriday
+  version: 11635eb403ff09dbc3a6b5a007ab5ab09151c229
+- name: github.com/sniperkit/compressible
+  version: 9a84fca0d9aacb1185bd51e66505bca9298edbc9
+  subpackages:
+  - pkg
+- name: github.com/sniperkit/gofeed
+  version: 2886f86f9867efc2aef235e4dfaef5d1b3e4486f
+  subpackages:
+  - pkg
+  - pkg/atom
+  - pkg/extensions
+  - pkg/internal/shared
+  - pkg/rss
+- name: github.com/sniperkit/goxpp
+  version: bfefd3caf15ca134816904632418ecb63b52fd43
+  subpackages:
+  - pkg
+- name: github.com/sniperkit/mimedb
+  version: 21fbbf247243aa093fd5e3db834cbacdd8a95711
+  subpackages:
+  - pkg
 - name: github.com/sniperkit/pp
   version: e057ee7a28277be4d2af303443b6da377768181f
 - name: github.com/stretchr/objx
@@ -34,10 +64,34 @@ imports:
   version: f3cacc17c85ecb7f1b6a9e373ee85d1480919868
   subpackages:
   - codec
+- name: golang.org/x/net
+  version: 92b859f39abd2d91a854c9f9c4621b2f5054a92d
+  subpackages:
+  - html
+  - html/atom
+  - html/charset
 - name: golang.org/x/sys
   version: d8e400bc7db4870d786864138af681469693d18c
   subpackages:
   - unix
+- name: golang.org/x/text
+  version: 5ee49cfe751141f8017047bab800d1f528ee3be1
+  subpackages:
+  - encoding
+  - encoding/charmap
+  - encoding/htmlindex
+  - encoding/internal
+  - encoding/internal/identifier
+  - encoding/japanese
+  - encoding/korean
+  - encoding/simplifiedchinese
+  - encoding/traditionalchinese
+  - encoding/unicode
+  - internal/tag
+  - internal/utf8internal
+  - language
+  - runes
+  - transform
 - name: gopkg.in/mgo.v2
   version: 3f83fa5005286a7fe593b055f0d7771a7dce4655
   subpackages:

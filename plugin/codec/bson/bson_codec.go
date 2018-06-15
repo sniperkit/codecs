@@ -1,19 +1,28 @@
 package bson
 
 import (
+	"sync"
+
 	// external
 	"gopkg.in/mgo.v2/bson"
-	// internal
-	// constants "github.com/sniperkit/codecs/pkg/constants"
 )
 
 const (
-	ContentTypeBSON   string = "application/bson"
-	FileExtensionBSON string = ".bson"
+	ContentType   string = "application/bson"
+	FileExtension string = ".bson"
 )
 
 // BsonCodec converts objects to and from BSON.
-type BsonCodec struct{}
+type BsonCodec struct {
+	config Config
+	lock   *sync.RWMutex
+}
+
+// New returns a new BSON serializer
+func New(cfg ...Config) *BsonCodec {
+	c := DefaultConfig().Merge(cfg)
+	return &BsonCodec{config: c}
+}
 
 // Marshal converts an object to BSON.
 func (b *BsonCodec) Marshal(object interface{}, options map[string]interface{}) ([]byte, error) {
@@ -27,12 +36,12 @@ func (b *BsonCodec) Unmarshal(data []byte, obj interface{}) error {
 
 // ContentType returns the content type for this codec.
 func (b *BsonCodec) ContentType() string {
-	return ContentTypeBSON
+	return ContentType
 }
 
 // FileExtension returns the file extension for this codec.
 func (b *BsonCodec) FileExtension() string {
-	return FileExtensionBSON
+	return FileExtension
 }
 
 // CanMarshalWithCallback returns whether this codec is capable of marshalling a response containing a callback.

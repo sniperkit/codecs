@@ -5,7 +5,7 @@ import (
 	"testing"
 
 	// internal
-	responder "github.com/sniperkit/codecs/plugin/responder"
+	responder "github.com/sniperkit/codecs/plugin/http/responder"
 )
 
 func checkRespond(request *http.Request, format string, t *testing.T) {
