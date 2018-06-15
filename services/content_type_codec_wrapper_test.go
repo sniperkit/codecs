@@ -1,10 +1,14 @@
 package services
 
 import (
-	"github.com/stretchr/codecs"
-	"github.com/stretchr/codecs/json"
-	"github.com/stretchr/testify/assert"
 	"testing"
+
+	// external
+	"github.com/stretchr/testify/assert"
+
+	// internal
+	"github.com/sniperkit/codecs/pkg"
+	"github.com/sniperkit/codecs/pkg/json"
 )
 
 // testCodec is a json codec that marshals the passed in options
@@ -39,7 +43,7 @@ func TestWrapCodec_Marshal(t *testing.T) {
 
 	response, err := wrappedCodec.Marshal(nil, nil)
 	assert.NoError(t, err)
-	expectedResponse := `{"matched_type":"`+testContentType+`"}`
+	expectedResponse := `{"matched_type":"` + testContentType + `"}`
 	assert.Equal(t, response, []byte(expectedResponse),
 		"The wrapped codec should add the matched content type to options on unmarshal")
 }

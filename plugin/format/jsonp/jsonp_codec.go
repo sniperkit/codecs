@@ -3,8 +3,12 @@ package jsonp
 import (
 	jsonEncoding "encoding/json"
 	"errors"
-	"github.com/stretchr/codecs/constants"
+
+	// external
 	stewstrings "github.com/stretchr/stew/strings"
+
+	// internal
+	constants "github.com/sniperkit/codecs/pkg/constants"
 )
 
 var validJsonpContentTypes = []string{

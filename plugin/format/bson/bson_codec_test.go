@@ -1,10 +1,14 @@
 package bson
 
 import (
-	"github.com/stretchr/codecs"
-	"github.com/stretchr/codecs/constants"
-	"github.com/stretchr/testify/assert"
 	"testing"
+
+	// external
+	"github.com/stretchr/testify/assert"
+
+	// internal
+	codecs "github.com/sniperkit/codecs/pkg"
+	constants "github.com/sniperkit/codecs/pkg/constants"
 )
 
 func TestInterface(t *testing.T) {

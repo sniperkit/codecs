@@ -1,8 +1,11 @@
 package bson
 
 import (
-	"github.com/stretchr/codecs/constants"
+	// external
 	"gopkg.in/mgo.v2/bson"
+
+	// internal
+	constants "github.com/sniperkit/codecs/pkg/constants"
 )
 
 // BsonCodec converts objects to and from BSON.

@@ -1,10 +1,14 @@
 package json
 
 import (
-	"github.com/stretchr/codecs"
-	"github.com/stretchr/codecs/constants"
-	"github.com/stretchr/testify/assert"
 	"testing"
+
+	// external
+	assert "github.com/stretchr/testify/assert"
+
+	// internal
+	codecs "github.com/sniperkit/codecs/pkg"
+	constants "github.com/sniperkit/codecs/pkg/constants"
 )
 
 var codec JsonCodec

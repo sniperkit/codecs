@@ -1,7 +1,7 @@
 package services
 
 import (
-	"github.com/stretchr/codecs"
+	codecs "github.com/sniperkit/codecs/pkg"
 )
 
 // CodecService is the interface for a service responsible for providing Codecs.

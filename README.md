@@ -6,8 +6,8 @@ Provides interfaces, functions and codecs that can be used to encode/decode data
 
 You can get stuck into the API documentation by checking out these API docs:
 
-  * [stretchrcom/codecs](http://godoc.org/github.com/stretchr/codecs)
-  * [stretchrcom/codecs/services](http://godoc.org/github.com/stretchr/codecs/services)
+  * [stretchrcom/codecs](http://godoc.org/github.com/sniperkit/codecs/pkg)
+  * [stretchrcom/codecs/services](http://godoc.org/github.com/sniperkit/codecs/pkg/services)
 
 ## How to use the codecs package
 

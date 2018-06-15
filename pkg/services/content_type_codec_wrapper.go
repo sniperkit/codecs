@@ -1,7 +1,7 @@
 package services
 
 import (
-	"github.com/stretchr/codecs"
+	codecs "github.com/sniperkit/codecs/pkg"
 )
 
 // contentTypeCodecWrapper is a wrapper for a Codec.  It is used to

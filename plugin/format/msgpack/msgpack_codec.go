@@ -2,8 +2,12 @@ package msgpack
 
 import (
 	"bytes"
-	"github.com/stretchr/codecs/constants"
-	"github.com/ugorji/go/codec"
+
+	// external
+	codec "github.com/ugorji/go/codec"
+
+	// internal
+	constants "github.com/sniperkit/codecs/pkg/constants"
 )
 
 // MsgpackCodec converts objects to and from Msgpack.

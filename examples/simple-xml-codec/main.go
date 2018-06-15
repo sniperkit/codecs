@@ -1,8 +1,9 @@
 package main
 
 import (
-	"github.com/stretchr/codecs/xml"
 	"log"
+
+	xml "github.com/sniperkit/codecs/plugin/format/xml"
 )
 
 var xmlCodec xml.SimpleXmlCodec

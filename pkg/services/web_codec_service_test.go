@@ -2,15 +2,21 @@ package services
 
 import (
 	"fmt"
-	"github.com/stretchr/codecs"
-	"github.com/stretchr/codecs/constants"
-	"github.com/stretchr/codecs/json"
-	"github.com/stretchr/codecs/test"
+	"strings"
+	"testing"
+
+	// external
 	"github.com/stretchr/objx"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
-	"strings"
-	"testing"
+
+	// internal - core
+	codecs "github.com/sniperkit/codecs/pkg"
+	constants "github.com/sniperkit/codecs/pkg/constants"
+
+	// internal - plugin - formats
+	json "github.com/sniperkit/codecs/pkg/json"
+	test "github.com/sniperkit/codecs/pkg/test"
 )
 
 /*

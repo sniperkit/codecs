@@ -3,8 +3,10 @@ package codecs
 import (
 	"errors"
 	"fmt"
-	"github.com/stretchr/objx"
 	"reflect"
+
+	// external
+	objx "github.com/stretchr/objx"
 )
 
 const (

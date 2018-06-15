@@ -2,10 +2,10 @@ package services
 
 import (
 	"fmt"
-	"github.com/stretchr/codecs"
-	"github.com/stretchr/codecs/constants"
-	"github.com/stretchr/codecs/json"
-	"github.com/stretchr/codecs/test"
+	"github.com/sniperkit/codecs/pkg"
+	"github.com/sniperkit/codecs/pkg/constants"
+	"github.com/sniperkit/codecs/pkg/json"
+	"github.com/sniperkit/codecs/pkg/test"
 	"github.com/stretchr/objx"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"

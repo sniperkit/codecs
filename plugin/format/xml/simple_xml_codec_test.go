@@ -1,11 +1,15 @@
 package xml
 
 import (
-	"github.com/stretchr/codecs"
-	"github.com/stretchr/codecs/constants"
-	"github.com/stretchr/objx"
-	"github.com/stretchr/testify/assert"
 	"testing"
+
+	// external
+	objx "github.com/stretchr/objx"
+	assert "github.com/stretchr/testify/assert"
+
+	// internal
+	codecs "github.com/sniperkit/codecs/pkg"
+	constants "github.com/sniperkit/codecs/pkg/constants"
 )
 
 var xmlCodec SimpleXmlCodec

@@ -1,13 +1,17 @@
 package codecs
 
 import (
-	"github.com/stretchr/codecs/constants"
-	"github.com/stretchr/codecs/test"
+	"reflect"
+	"testing"
+
+	// external
 	"github.com/stretchr/objx"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
-	"reflect"
-	"testing"
+
+	// internal
+	"github.com/sniperkit/codecs/pkg/constants"
+	"github.com/sniperkit/codecs/pkg/test"
 )
 
 /*

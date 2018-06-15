@@ -5,10 +5,14 @@ import (
 	"encoding/csv"
 	"encoding/json"
 	"fmt"
-	"github.com/stretchr/codecs/constants"
-	"github.com/stretchr/objx"
 	"reflect"
 	"strings"
+
+	// external
+	objx "github.com/stretchr/objx"
+
+	// internal
+	constants "github.com/sniperkit/codecs/pkg/constants"
 )
 
 var validCsvContentTypes = []string{
@@ -48,7 +52,7 @@ func (c *CsvCodec) Marshal(object interface{}, options map[string]interface{}) (
 	for _, m := range dataRows {
 
 		// for each field
-		for k, _ := range m {
+		for k := range m {
 
 			shouldAdd := true
 			for _, field := range fields {

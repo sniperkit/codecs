@@ -2,7 +2,9 @@ package json
 
 import (
 	jsonEncoding "encoding/json"
-	"github.com/stretchr/codecs/constants"
+
+	// internal
+	constants "github.com/sniperkit/codecs/pkg/constants"
 )
 
 var validJsonContentTypes = []string{

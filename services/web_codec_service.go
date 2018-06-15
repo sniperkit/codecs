@@ -1,15 +1,19 @@
 package services
 
 import (
-	"github.com/stretchr/codecs"
-	"github.com/stretchr/codecs/bson"
-	"github.com/stretchr/codecs/constants"
-	"github.com/stretchr/codecs/csv"
-	"github.com/stretchr/codecs/json"
-	"github.com/stretchr/codecs/jsonp"
-	"github.com/stretchr/codecs/msgpack"
-	"github.com/stretchr/codecs/xml"
 	"strings"
+
+	// internal
+	"github.com/sniperkit/codecs/pkg"
+	"github.com/sniperkit/codecs/pkg/constants"
+
+	// internal - plugins - format
+	"github.com/sniperkit/codecs/plugin/bson"
+	"github.com/sniperkit/codecs/plugin/csv"
+	"github.com/sniperkit/codecs/plugin/json"
+	"github.com/sniperkit/codecs/plugin/jsonp"
+	"github.com/sniperkit/codecs/plugin/msgpack"
+	"github.com/sniperkit/codecs/plugin/xml"
 )
 
 type ContentTypeNotSupportedError struct {

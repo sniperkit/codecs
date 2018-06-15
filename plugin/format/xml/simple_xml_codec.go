@@ -2,12 +2,16 @@ package xml
 
 import (
 	"fmt"
-	xml "github.com/clbanning/x2j"
-	"github.com/stretchr/codecs/constants"
-	"github.com/stretchr/objx"
 	"reflect"
 	"strconv"
 	"strings"
+
+	// external
+	xml "github.com/clbanning/x2j"
+	objx "github.com/stretchr/objx"
+
+	// internal
+	constants "github.com/sniperkit/codecs/pkg/constants"
 )
 
 const (

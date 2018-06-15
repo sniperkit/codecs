@@ -2,13 +2,17 @@ package csv
 
 import (
 	"fmt"
-	"github.com/stretchr/codecs"
-	"github.com/stretchr/codecs/constants"
-	"github.com/stretchr/objx"
-	"github.com/stretchr/testify/assert"
 	"log"
 	"reflect"
 	"testing"
+
+	// external
+	objx "github.com/stretchr/objx"
+	"github.com/stretchr/testify/assert"
+
+	// internal
+	codecs "github.com/sniperkit/codecs/pkg"
+	constants "github.com/sniperkit/codecs/pkg/constants"
 )
 
 func TestInterface(t *testing.T) {

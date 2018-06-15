@@ -1,9 +1,11 @@
 package services
 
 import (
-	"github.com/stretchr/testify/assert"
 	"strings"
 	"testing"
+
+	// external
+	"github.com/stretchr/testify/assert"
 )
 
 func TestParseAccept_NoParams(t *testing.T) {
