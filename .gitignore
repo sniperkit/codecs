@@ -6,6 +6,7 @@
 # Folders
 _obj
 _test
+debug
 
 # Architecture specific extensions/prefixes
 *.[568vq]
@@ -20,5 +21,32 @@ _cgo_export.*
 _testmain.go
 
 *.exe
+*.test
+*.prof
+*.coverprofile
 
-.DS_Store
+.env 
+.secret
+
+example/example
+
+examples/example
+cmd/gen-mimedb/gen-mimedb
+
+bin
+bin/
+bin/*
+bin/**
+
+dist
+dist/
+dist/*
+dist/**
+
+vendor
+vendor/
+vendor/*
+vendor/**
+
+.secret*
+.env
